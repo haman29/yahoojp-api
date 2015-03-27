@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'yahoojp/api/version'
+require 'yahoojp/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "yahoojp-api"
-  spec.version       = Yahoojp::Api::VERSION
+  spec.version       = Yahoojp::VERSION
   spec.authors       = ["Kyohei Hamada"]
   spec.email         = ["kyohei.hamada@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Yahoo jp api client, written in Ruby}
+  spec.description   = %q{Yahoo jp api client, written in Ruby}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -21,4 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
+  spec.add_dependency "faraday", "~> 0.9"
+  spec.add_development_dependency "pry"
 end

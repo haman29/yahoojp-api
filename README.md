@@ -1,13 +1,13 @@
 # Yahoojp::Api
 
-TODO: Write a gem description
+Yahoo jp API Client, written by Ruby
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'yahoojp-api'
+gem 'yahoojp-api', github: 'haman29/yahoojp-api'
 ```
 
 And then execute:
@@ -20,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require 'yahoojp'
+client = Yahoojp::Auction::Client.new(
+           app_id: '[your app id]',
+           affiliate_id: '[your affiliate id]', # not impremented
+         )
+
+res = client.category_leafs(category: 22748, page: 2)
+res.has_error? # => false
+res.total_count # => 30232
+res.count # => 20
+res.offset # => 21
+res.next_page # => 3
+res.items # => Array[Hash, Hash, ...]
+```
 
 ## Contributing
 
