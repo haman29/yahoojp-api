@@ -39,6 +39,10 @@ module Yahoojp
         result['CategoryPath']
       end
 
+      def item
+        result.is_a?(Hash) ? result : nil
+      end
+
       def items
         result['Item']
       end

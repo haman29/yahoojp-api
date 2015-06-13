@@ -4,17 +4,21 @@ require 'yahoojp/auction/response'
 module Yahoojp
   module Auction
     module API
-      include Yahoojp::Auction::CategoryLeaf
-
+      Methods = %i(
+        categoryLeaf
+        auctionItem
+      )
       def default_params
         {
           appid: @app_id,
           output: :json,
         }
       end
-      def category_leafs params
-        response = conn.get "#{path}/categoryLeaf", default_params.merge(params)
-        Response.new response
+
+      Methods.map do |method_name|
+        define_method method_name do |params|
+          Response.new conn.get([path, method_name].join('/'), default_params.merge(params))
+        end
       end
     end
   end
