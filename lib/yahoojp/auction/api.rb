@@ -1,4 +1,3 @@
-require 'yahoojp/auction/category_leaf'
 require 'yahoojp/auction/response'
 
 module Yahoojp
