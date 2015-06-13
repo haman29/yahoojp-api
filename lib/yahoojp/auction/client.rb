@@ -9,8 +9,6 @@ module Yahoojp
   module Auction
     class Client < Yahoojp::Client
       include Yahoojp::Auction::API
-      EndPointCategoryLeaf = 'http://auctions.yahooapis.jp/AuctionWebService/V2/categoryLeaf'
-      EndPointDescription  = 'http://auctions.yahooapis.jp/AuctionWebService/V2/auctionItem'
 
       def version
         'V2'
