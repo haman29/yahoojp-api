@@ -22,12 +22,9 @@ Or install it yourself as:
 
 ```
 require 'yahoojp'
-client = Yahoojp::Auction::Client.new(
-           app_id: '[your app id]',
-           affiliate_id: '[your affiliate id]', # not impremented
-         )
+client = Yahoojp::Auction::Client.new(app_id: '[your app id]')
 
-res = client.category_leafs(category: 22748, page: 2)
+res = client.categoryLeaf(category: 22748, page: 2)
 res.has_error? # => false
 res.total_count # => 30232
 res.count # => 20
